@@ -7,6 +7,11 @@
 
 import Foundation
 
+/// 用于解决codable中，一些可以不确定变化的字典或者数组，如，接口下发一个extra的字典，但内容不确定有哪些字段。
+/// 在swift中，不能使用[String: Any]类型，因为codable要求类型必须为确定类型。AnyBasicTypeCodable就是来解决这个问题的，
+/// 使用方式为：
+///     指定类型为[String: AnyBasicTypeCodable]，AnyBasicTypeCodable类型中包括了常用的bool、int、double、string、array、dictionary
+///     也支持将字典或者数组转换成JSON格式的字符串
 enum AnyBasicTypeCodable: Codable, CustomStringConvertible {
     case bool(Bool)
     case double(Double)
