@@ -12,7 +12,7 @@ import Foundation
 /// 使用方式为：
 ///     指定类型为[String: AnyBasicTypeCodable]，AnyBasicTypeCodable类型中包括了常用的bool、int、double、string、array、dictionary
 ///     也支持将字典或者数组转换成JSON格式的字符串
-enum AnyBasicTypeCodable: Codable, CustomStringConvertible {
+public enum AnyBasicTypeCodable: Codable, CustomStringConvertible {
     case bool(Bool)
     case double(Double)
     case int(Int)
@@ -20,7 +20,7 @@ enum AnyBasicTypeCodable: Codable, CustomStringConvertible {
     indirect case array([AnyBasicTypeCodable])
     indirect case dictionary([String: AnyBasicTypeCodable])
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         if let container = try? decoder.container(keyedBy: JSONCodingKeys.self) {
             self = AnyBasicTypeCodable(from: container)
         } else if let container = try? decoder.unkeyedContainer() {
@@ -32,7 +32,7 @@ enum AnyBasicTypeCodable: Codable, CustomStringConvertible {
         }
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
         case .bool(let bool):
@@ -156,5 +156,128 @@ struct JSONCodingKeys: CodingKey {
     init?(intValue: Int) {
         self.init(stringValue: "\(intValue)")
         self.intValue = intValue
+    }
+}
+
+
+public extension AnyBasicTypeCodable {
+    func getBoolValue() -> Bool? {
+        switch self {
+        case .bool(let bool):
+            return bool
+        case .double(let double):
+            return double == 1
+        case .int(let int):
+            return int == 1
+        case .string(let string):
+            return string == "1"
+        case .array:
+            return nil
+        case .dictionary:
+            return nil
+        }
+    }
+    
+    func getBoolValue(defaultValue: Bool) -> Bool {
+        if let value = getBoolValue() {
+            return value
+        }
+        return defaultValue
+    }
+    
+    func getIntValue() -> Int? {
+        switch self {
+        case .bool(let bool):
+            return bool ? 1 : 0
+        case .double(let double):
+            return Int(double)
+        case .int(let int):
+            return int
+        case .string(let string):
+            return Int(string)
+        case .array:
+            return nil
+        case .dictionary:
+            return nil
+        }
+    }
+    
+    func getIntValue(defaultValue: Int) -> Int {
+        if let value = getIntValue() {
+            return value
+        }
+        return defaultValue
+    }
+    
+    func getFloatValue() -> Float? {
+        switch self {
+        case .bool(let bool):
+            return bool ? 1.0 : 0.0
+        case .double(let double):
+            return Float(double)
+        case .int(let int):
+            return Float(int)
+        case .string(let string):
+            return Float(string)
+        case .array:
+            return nil
+        case .dictionary:
+            return nil
+        }
+    }
+    
+    func getFloatValue(defaultValue: Float) -> Float {
+        if let value = getFloatValue() {
+            return value
+        }
+        return defaultValue
+    }
+    
+    func getDoubleValue() -> Double? {
+        switch self {
+        case .bool(let bool):
+            return bool ? 1.0 : 0.0
+        case .double(let double):
+            return Double(double)
+        case .int(let int):
+            return Double(int)
+        case .string(let string):
+            return Double(string)
+        case .array:
+            return nil
+        case .dictionary:
+            return nil
+        }
+    }
+    
+    func getDoubleValue(defaultValue: Double) -> Double {
+        if let value = getDoubleValue() {
+            return value
+        }
+        return defaultValue
+    }
+    
+    func getStringValue() -> String? {
+        switch self {
+        case .bool(let bool):
+            return bool ? "1" : "0"
+        case .double(let double):
+            return String(double)
+        case .int(let int):
+            return String(int)
+        case .string(let string):
+            return string
+        case .array:
+            return nil
+        case .dictionary:
+            return nil
+        }
+    }
+    
+    func getStringValue(defaultValue: String) -> String {
+        if let value = getStringValue() {
+            return value
+        }
+        return defaultValue
     }
 }
