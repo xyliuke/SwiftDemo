@@ -10,6 +10,7 @@
 		1F05910527B27A0600064F63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05910427B27A0600064F63 /* main.swift */; };
 		1F05914B27B2808E00064F63 /* AnyBasicTypeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05914A27B2808E00064F63 /* AnyBasicTypeCodable.swift */; };
 		1FC79AD427B4C423005BBB5E /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC79AD327B4C423005BBB5E /* Dictionary+Ext.swift */; };
+		1FC79AD627B5123B005BBB5E /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC79AD527B5123B005BBB5E /* DefaultValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		1F05910427B27A0600064F63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1F05914A27B2808E00064F63 /* AnyBasicTypeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasicTypeCodable.swift; sourceTree = "<group>"; };
 		1FC79AD327B4C423005BBB5E /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
+		1FC79AD527B5123B005BBB5E /* DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1F05910427B27A0600064F63 /* main.swift */,
 				1F05914A27B2808E00064F63 /* AnyBasicTypeCodable.swift */,
 				1FC79AD327B4C423005BBB5E /* Dictionary+Ext.swift */,
+				1FC79AD527B5123B005BBB5E /* DefaultValue.swift */,
 			);
 			path = SwiftDemo;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 				1F05910527B27A0600064F63 /* main.swift in Sources */,
 				1FC79AD427B4C423005BBB5E /* Dictionary+Ext.swift in Sources */,
 				1F05914B27B2808E00064F63 /* AnyBasicTypeCodable.swift in Sources */,
+				1FC79AD627B5123B005BBB5E /* DefaultValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
