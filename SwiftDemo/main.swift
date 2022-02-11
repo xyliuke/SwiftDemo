@@ -71,13 +71,38 @@ if let data = dic.data(using: .utf8) {
     }
 }
 
+let t1 = Test1()
+let t2 = Test2()
+t2.test1 = t1
+t2.addObserve()
+t1.test()
 
+class Test1 {
+    var delegate = Delegate<Int, Int?>()
+    
+    func test() {
+        var ret = delegate(5)
+        print(ret)
+        if let ret = ret {
+            print(ret)
+        }
+    }
+    
+    deinit {
+        print("test1 deinit")
+    }
+}
 
-//if let data = try? JSONEncoder().encode(dic) {
-////    if let string = String(data: data, encoding: .utf8) {
-//        print(dic)
-//        if let model = try? JSONDecoder().decode(Model.self, from: data) {
-//            print(model.text)
-//        }
-////    }
-//}
+class Test2 {
+    var test1: Test1?
+    
+    func addObserve() {
+        test1?.delegate.delegate(on: self, callback: { weakSelf, input in
+            print(input)
+            return 6
+        })
+    }
+    deinit {
+        print("test2 deinit")
+    }
+}

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F05910527B27A0600064F63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05910427B27A0600064F63 /* main.swift */; };
 		1F05914B27B2808E00064F63 /* AnyBasicTypeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05914A27B2808E00064F63 /* AnyBasicTypeCodable.swift */; };
+		1FA3D18427B6589900F23858 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3D18327B6589900F23858 /* Delegate.swift */; };
 		1FC79AD427B4C423005BBB5E /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC79AD327B4C423005BBB5E /* Dictionary+Ext.swift */; };
 		1FC79AD627B5123B005BBB5E /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC79AD527B5123B005BBB5E /* DefaultValue.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		1F05910127B27A0600064F63 /* SwiftDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F05910427B27A0600064F63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1F05914A27B2808E00064F63 /* AnyBasicTypeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasicTypeCodable.swift; sourceTree = "<group>"; };
+		1FA3D18327B6589900F23858 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		1FC79AD327B4C423005BBB5E /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		1FC79AD527B5123B005BBB5E /* DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				1F05914A27B2808E00064F63 /* AnyBasicTypeCodable.swift */,
 				1FC79AD327B4C423005BBB5E /* Dictionary+Ext.swift */,
 				1FC79AD527B5123B005BBB5E /* DefaultValue.swift */,
+				1FA3D18327B6589900F23858 /* Delegate.swift */,
 			);
 			path = SwiftDemo;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F05910527B27A0600064F63 /* main.swift in Sources */,
+				1FA3D18427B6589900F23858 /* Delegate.swift in Sources */,
 				1FC79AD427B4C423005BBB5E /* Dictionary+Ext.swift in Sources */,
 				1F05914B27B2808E00064F63 /* AnyBasicTypeCodable.swift in Sources */,
 				1FC79AD627B5123B005BBB5E /* DefaultValue.swift in Sources */,
