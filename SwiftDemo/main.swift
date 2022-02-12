@@ -78,10 +78,10 @@ t2.addObserve()
 t1.test()
 
 class Test1 {
-    var delegate = Delegate<Int, Int?>()
+    var delegate = Delegate<(Int, Int), Int>()
     
     func test() {
-        var ret = delegate(5)
+        var ret = delegate((5, 4))
         print(ret)
         if let ret = ret {
             print(ret)
@@ -100,6 +100,7 @@ class Test2 {
         test1?.delegate.delegate(on: self, callback: { weakSelf, input in
             print(input)
             return 6
+//            return nil
         })
     }
     deinit {
